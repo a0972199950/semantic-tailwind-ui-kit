@@ -10,7 +10,7 @@ export class FFButton {
   render() {
     return (
       <Host>
-        <button class="ui primary button btn">
+        <button class="">
           <slot />
         </button>
       </Host>
