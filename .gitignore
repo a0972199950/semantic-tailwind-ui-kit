@@ -24,3 +24,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+
+# production
+/src/semantic/dist

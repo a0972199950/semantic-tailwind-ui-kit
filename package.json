@@ -15,17 +15,22 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build-semantic": "cd src/semantic && gulp build-css build-assets",
+    "watch-semantic": "cd src/semantic && yarn run build-semantic && gulp watch",
+    "build": "yarn run build-semantic && stencil build --docs",
     "dev": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^2.6.0"
+    "@stencil/core": "^2.6.0",
+    "fomantic-ui": "^2.8.7"
   },
   "license": "MIT",
   "devDependencies": {
-    "@stencil/sass": "^1.4.1"
+    "@stencil/less": "^1.0.0",
+    "@stencil/sass": "^1.4.1",
+    "less-plugin-autoprefix": "^2.0.0"
   }
 }
