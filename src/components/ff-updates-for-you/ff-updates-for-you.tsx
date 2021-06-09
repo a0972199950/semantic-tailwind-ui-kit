@@ -41,7 +41,7 @@ export class FFUpdatesForYou {
     }
   }
 
-  @Event() seeDetail: EventEmitter
+  @Event({ eventName: 'detailBtnClick' }) detailBtnClick: EventEmitter
 
   render () {
     return (
@@ -74,7 +74,7 @@ export class FFUpdatesForYou {
           <ff-button
             type="primary"
             size="mini"
-            onClick={() => this.seeDetail.emit()}
+            onClick={() => this.detailBtnClick.emit()}
           >
             See details
           </ff-button>

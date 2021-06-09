@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event       | Description | Type               |
-| ----------- | ----------- | ------------------ |
-| `seeDetail` |             | `CustomEvent<any>` |
+| Event            | Description | Type               |
+| ---------------- | ----------- | ------------------ |
+| `detailBtnClick` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

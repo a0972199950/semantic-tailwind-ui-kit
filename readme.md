@@ -20,8 +20,72 @@ yarn install
 yarn add -D gulp
 ```
 
+# 實作 Web Component 時的注意事項
+1. event name 一律使用駝峰命名。原因如下：
+    - HTML 原生的複合單字事件，一律是使用全小寫。例如 mousemove
+    - 如果 web component 的自定義的複合字事件也使用全小寫(ex. detailclick)，在 vue 上，可以透過 @detailclick 綁定事件，但在 react 上則無法使用 onDetailClick 綁定
+    - 原因為，當 react 綁定原生複合字事件時(ex. onMouseMove)，react 背後有一個原生事件 mapping 表叫做 SyntheticEvent，會自動把 "mouseMove" 轉為 "mousemove"。但當綁定的複合字事件不在 mapping 表時，則會使用駝峰命名綁定
+    - 而，web component 的字定義複合字事件，不會真的成為原生 DOM 事件的一部分 (成為原生 DOM 事件意味可以使用 <element ondetailclick="fn()" /> 傳遞事件監聽器)，因此自然也不適合擴展 SyntheticEvent 來加入這類字定義複合字事件 (我也不知道要怎麼擴展 SyntheticEvent)
+    - 綜上，為了使複合字事件能橫跨不同前端框架使用，解決方式即為一律使用駝峰式命名
+
 # 在 React 上實作的注意事項
 1. 由於 web component 的 prop 只能傳入 string 及 boolean
 (其餘的資料需要透過element.setAttribute('person', { name: 'john' }) 傳入，或是使用 JSON.stringify({ person: { name: 'john' } }))
 因此在 react 上，要使用 reactify-wc 依賴包來協助傳遞 prop
+```javascript
+import reactifyWc from 'reactify-wc'
+
+const FFUpdatesForYou = reactifyWc('ff-updates-for-you')
+
+<FFUpdatesForYou
+  benchmarks={[
+    {
+      key: 'INDUSTRY_BENCHMARK_INDEX',
+      text: 'Industry benchmark index',
+      score: 4
+    },
+
+    {
+      key: 'FININCIAL_HEALTHINESS',
+      text: 'Financial healthiness',
+      score: 0
+    },
+
+    {
+      key: 'DATA_QUALITY',
+      text: 'Data Quality',
+      score: 10
+    }
+  ]}
+/>
+```
 https://www.npmjs.com/package/reactify-wc
+
+# 在 Vue 上實作的注意事項
+1. 由於 web component 的 prop 只能傳入 string 及 boolean
+(其餘的資料需要透過element.setAttribute('person', { name: 'john' }) 傳入，或是使用 JSON.stringify({ person: { name: 'john' } }))
+因此在 vue 上，要使用 :xxx.prop 裝飾器來協助傳遞 prop
+```HTML
+<ff-updates-for-you
+  :benchmarks.prop="[
+    {
+      key: 'INDUSTRY_BENCHMARK_INDEX',
+      text: 'Industry benchmark index',
+      score: 4
+    },
+
+    {
+      key: 'FININCIAL_HEALTHINESS',
+      text: 'Financial healthiness',
+      score: 0
+    },
+
+    {
+      key: 'DATA_QUALITY',
+      text: 'Data Quality',
+      score: 10
+    }
+  ]"
+/>
+```
+https://medium.com/sharenowtech/using-stenciljs-with-vue-a076244790e5

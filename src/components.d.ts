@@ -62,7 +62,7 @@ declare namespace LocalJSX {
     }
     interface FfUpdatesForYou {
         "benchmarks"?: Benchmark[];
-        "onSeeDetail"?: (event: CustomEvent<any>) => void;
+        "onDetailBtnClick"?: (event: CustomEvent<any>) => void;
     }
     interface MyComponent {
         /**

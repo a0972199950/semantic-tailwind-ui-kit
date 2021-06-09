@@ -1,18 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import reactifyWc from "reactify-wc"
+import reactifyWc from 'reactify-wc'
 
 const FFButton = reactifyWc('ff-button')
 const FFUpdatesForYou = reactifyWc('ff-updates-for-you')
 
 function App() {
   const seeDetail = () => {
-    console.log('see detail')
+    alert('Click see detail')
   }
 
   return (
     <div>
-      <FFButton type="primary" onClick={() => log()}>test</FFButton>
+      <FFButton type="primary">button</FFButton>
 
       <hr />
 
@@ -37,7 +37,7 @@ function App() {
               score: 10
             },
           ]}
-          onSeeDetail={() => seeDetail()}
+          onDetailBtnClick={() => seeDetail()}
         />
       </div>
     </div>

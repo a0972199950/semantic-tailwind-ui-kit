@@ -10,23 +10,9 @@
   </head>
   <body>
 
-    <!-- <ff-button>button</ff-button>
+    <ff-button type="primary">button</ff-button>
 
     <hr>
-
-    <ff-header>
-      <p>slot content</p>
-    </ff-header>
-
-    <script>
-      const ffHeader = document.querySelector('ff-header')
-      ffHeader.navs = [
-        { text: 'Home', link: '/home' },
-        { text: 'About', link: '/about' },
-        { text: 'Service', link: '/service' },
-        { text: 'Price', link: '/price' },
-      ]
-    </script> -->
 
     <div style="width: 300px; border: 1px grey dashed;">
       <ff-updates-for-you />
@@ -53,6 +39,10 @@
           score: 10
         },
       ]
+
+      ffUpdatesForYou.addEventListener('detailBtnClick', () => {
+        alert('Click see detail')
+      })
     </script>
 
   </body>

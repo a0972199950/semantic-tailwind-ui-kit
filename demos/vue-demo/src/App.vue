@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ff-button type="primary">button</ff-button>
+
+    <hr>
+    
+    <div style="width: 300px; border: 1px grey dashed;">
+      <ff-updates-for-you
+        :benchmarks.prop="[
+          {
+            key: 'INDUSTRY_BENCHMARK_INDEX',
+            text: 'Industry benchmark index',
+            score: 4
+          },
+  
+          {
+            key: 'FININCIAL_HEALTHINESS',
+            text: 'Financial healthiness',
+            score: 0
+          },
+  
+          {
+            key: 'DATA_QUALITY',
+            text: 'Data Quality',
+            score: 10
+          },
+        ]"
+        @detailBtnClick="seeDetail"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+
+  methods: {
+    seeDetail () {
+      alert('Click see detail')
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
