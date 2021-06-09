@@ -29,4 +29,8 @@ export class MyComponent {
   render() {
     return <div>Hello, World! I'm {this.getText()}</div>;
   }
+
+  componentDidLoad () {
+    console.log('first: ', this.first)
+  }
 }

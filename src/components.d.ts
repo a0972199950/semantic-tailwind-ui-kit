@@ -5,8 +5,15 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { SemanticCOLORS, SemanticSIZES } from "semantic-ui-react";
+import { Benchmark } from "./types";
 export namespace Components {
     interface FfButton {
+        "size"?: SemanticSIZES;
+        "type"?: SemanticCOLORS | 'primary' | 'secondary';
+    }
+    interface FfUpdatesForYou {
+        "benchmarks": Benchmark[];
     }
     interface MyComponent {
         /**
@@ -30,6 +37,12 @@ declare global {
         prototype: HTMLFfButtonElement;
         new (): HTMLFfButtonElement;
     };
+    interface HTMLFfUpdatesForYouElement extends Components.FfUpdatesForYou, HTMLStencilElement {
+    }
+    var HTMLFfUpdatesForYouElement: {
+        prototype: HTMLFfUpdatesForYouElement;
+        new (): HTMLFfUpdatesForYouElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -38,11 +51,18 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "ff-button": HTMLFfButtonElement;
+        "ff-updates-for-you": HTMLFfUpdatesForYouElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface FfButton {
+        "size"?: SemanticSIZES;
+        "type"?: SemanticCOLORS | 'primary' | 'secondary';
+    }
+    interface FfUpdatesForYou {
+        "benchmarks"?: Benchmark[];
+        "onSeeDetail"?: (event: CustomEvent<any>) => void;
     }
     interface MyComponent {
         /**
@@ -60,6 +80,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "ff-button": FfButton;
+        "ff-updates-for-you": FfUpdatesForYou;
         "my-component": MyComponent;
     }
 }
@@ -68,6 +89,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ff-button": LocalJSX.FfButton & JSXBase.HTMLAttributes<HTMLFfButtonElement>;
+            "ff-updates-for-you": LocalJSX.FfUpdatesForYou & JSXBase.HTMLAttributes<HTMLFfUpdatesForYouElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

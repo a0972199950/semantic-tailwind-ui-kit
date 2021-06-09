@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+
+.container {
+  @apply pt-8 px-4 pb-6;
+}
+
+.title {
+  @apply text-xl font-semibold text-black mb-2;
+}
+
+.pharagraph {
+  @apply text-xs text-gray-600;
+}
+
+.benchmark {
+  @apply pb-4 border-gray-400 my-4;
+  border-bottom-width: 1px;
+
+  &__content {
+    @apply flex justify-between items-center;
+  }
+
+  &__key {
+    @apply text-black text-sm w-48;
+  }
+
+  &__status {
+    @apply text-xs text-gray-600 mr-1;
+  }
+
+  &__icon {
+    @apply rounded-full inline-block;
+
+    content: '';
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@tailwind utilities;

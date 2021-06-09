@@ -1,11 +1,7 @@
 @tailwind base;
 @tailwind components;
 
-.fuck {
-  color: red;
-}
-
-@import "../../semantic/dist/components/button.min.css";
+@import '../../semantic/dist/components/button.min.css';
 
 :host {
   display: block;

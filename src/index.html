@@ -9,11 +9,51 @@
     <script nomodule src="/build/fundfluent-frontend-design-system.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
 
-    <ff-button>hahaah</ff-button>
-    <ff-button>hahaah</ff-button>
-    <ff-button>hahaah</ff-button>
-    <ff-button>hahaah</ff-button>
+    <!-- <ff-button>button</ff-button>
+
+    <hr>
+
+    <ff-header>
+      <p>slot content</p>
+    </ff-header>
+
+    <script>
+      const ffHeader = document.querySelector('ff-header')
+      ffHeader.navs = [
+        { text: 'Home', link: '/home' },
+        { text: 'About', link: '/about' },
+        { text: 'Service', link: '/service' },
+        { text: 'Price', link: '/price' },
+      ]
+    </script> -->
+
+    <div style="width: 300px; border: 1px grey dashed;">
+      <ff-updates-for-you />
+    </div>
+    
+    <script>
+      const ffUpdatesForYou = document.querySelector('ff-updates-for-you')
+      ffUpdatesForYou.benchmarks = [
+        {
+          key: 'INDUSTRY_BENCHMARK_INDEX',
+          text: 'Industry benchmark index',
+          score: 4
+        },
+
+        {
+          key: 'FININCIAL_HEALTHINESS',
+          text: 'Financial healthiness',
+          score: 0
+        },
+
+        {
+          key: 'DATA_QUALITY',
+          text: 'Data Quality',
+          score: 10
+        },
+      ]
+    </script>
+
   </body>
 </html>

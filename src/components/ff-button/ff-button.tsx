@@ -1,4 +1,5 @@
-import { Component, Host, h } from '@stencil/core'
+import { Component, Host, h, Prop } from '@stencil/core'
+import { SemanticCOLORS, SemanticSIZES } from 'semantic-ui-react'
 
 @Component({
   tag: 'ff-button',
@@ -6,11 +7,13 @@ import { Component, Host, h } from '@stencil/core'
   shadow: true,
 })
 export class FFButton {
+  @Prop () type?: SemanticCOLORS | 'primary' | 'secondary' = 'primary'
+  @Prop () size?: SemanticSIZES = 'medium'
 
   render() {
     return (
       <Host>
-        <button class="">
+        <button class={`ui button ${this.type} ${this.size}`}>
           <slot />
         </button>
       </Host>

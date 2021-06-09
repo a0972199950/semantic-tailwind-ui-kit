@@ -19,3 +19,9 @@ yarn install
 ```
 yarn add -D gulp
 ```
+
+# 在 React 上實作的注意事項
+1. 由於 web component 的 prop 只能傳入 string 及 boolean
+(其餘的資料需要透過element.setAttribute('person', { name: 'john' }) 傳入，或是使用 JSON.stringify({ person: { name: 'john' } }))
+因此在 react 上，要使用 reactify-wc 依賴包來協助傳遞 prop
+https://www.npmjs.com/package/reactify-wc

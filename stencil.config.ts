@@ -13,7 +13,7 @@ import replace from 'postcss-replace'
 
 const purge = purgecss({
   content: ['./src/**/*.tsx', './src/index.html'],
-  // safelist: [':host']
+  safelist: [':host', /^bg-/]
 })
 
 export const config: Config = {
@@ -37,14 +37,14 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
-    },
+    }
   ],
 
   plugins: [
     // sass, scss 支援
     sass({
       injectGlobalPaths: [
-        'src/styles/variables.scss'
+        'src/styles/index.scss'
       ]
     }),
 
@@ -61,8 +61,8 @@ export const config: Config = {
         replace({ pattern: 'html', data: { replaceAll: ':host' } }),
 
         // purge and cssnano if production build
-        ...(process.argv.includes('--dev')
-          ? [ purge ]
+        ...(!process.argv.includes('--dev')
+          ? [ purge, cssnano() ]
           : [])
       ]
     })
