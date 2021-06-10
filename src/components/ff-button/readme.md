@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                                                                                                                                    | Default     |
-| -------- | --------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `size`   | `size`    |             | `"big" \| "huge" \| "large" \| "massive" \| "medium" \| "mini" \| "small" \| "tiny"`                                                                                    | `'medium'`  |
-| `type`   | `type`    |             | `"black" \| "blue" \| "brown" \| "green" \| "grey" \| "olive" \| "orange" \| "pink" \| "primary" \| "purple" \| "red" \| "secondary" \| "teal" \| "violet" \| "yellow"` | `'primary'` |
+| Property | Attribute | Description | Type  | Default     |
+| -------- | --------- | ----------- | ----- | ----------- |
+| `size`   | `size`    |             | `any` | `'medium'`  |
+| `type`   | `type`    |             | `any` | `'primary'` |
 
 
 ## Dependencies

@@ -5,12 +5,11 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { SemanticCOLORS, SemanticSIZES } from "semantic-ui-react";
 import { Benchmark } from "./types";
 export namespace Components {
     interface FfButton {
-        "size"?: SemanticSIZES;
-        "type"?: SemanticCOLORS | 'primary' | 'secondary';
+        "size"?: any;
+        "type"?: any | 'primary' | 'secondary';
     }
     interface FfUpdatesForYou {
         "benchmarks": Benchmark[];
@@ -57,8 +56,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface FfButton {
-        "size"?: SemanticSIZES;
-        "type"?: SemanticCOLORS | 'primary' | 'secondary';
+        "size"?: any;
+        "type"?: any | 'primary' | 'secondary';
     }
     interface FfUpdatesForYou {
         "benchmarks"?: Benchmark[];

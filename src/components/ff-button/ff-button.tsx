@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core'
-import { SemanticCOLORS, SemanticSIZES } from 'semantic-ui-react'
+// import { SemanticCOLORS, SemanticSIZES } from 'semantic-ui-react'
 
 @Component({
   tag: 'ff-button',
@@ -7,8 +7,8 @@ import { SemanticCOLORS, SemanticSIZES } from 'semantic-ui-react'
   shadow: true,
 })
 export class FFButton {
-  @Prop () type?: SemanticCOLORS | 'primary' | 'secondary' = 'primary'
-  @Prop () size?: SemanticSIZES = 'medium'
+  @Prop () type?: any | 'primary' | 'secondary' = 'primary'
+  @Prop () size?: any = 'medium'
 
   render() {
     return (
