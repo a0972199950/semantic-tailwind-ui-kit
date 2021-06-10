@@ -1,0 +1,58 @@
+import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs/blocks'
+import { html } from 'lit-html'
+// import { FFUpdatesForYou } from './FFUpdatesForYou'
+
+<Meta
+  title="fundfluent/ff-updates-for-you"
+  decorators={[
+    story => html`
+      <div style="width: 300px; border: 1px grey dashed;">
+        ${story()}
+      </div>
+    `
+  ]}
+/>
+
+
+# Updates For you
+
+This component is used to display news/updates for users
+
+code:
+```jsx
+<FFUpdatesForYou
+  benchmarks={[
+    {
+      key: 'INDUSTRY_BENCHMARK_INDEX',
+      text: 'Industry benchmark index',
+      score: 4
+    },
+
+    {
+      key: 'FININCIAL_HEALTHINESS',
+      text: 'Financial healthiness',
+      score: 0
+    },
+
+    {
+      key: 'DATA_QUALITY',
+      text: 'Data Quality',
+      score: 10
+    },
+  ]}
+  onDetailBtnClick={() => seeDetail()}
+/>
+```
+
+<Story
+  name="default"
+>
+  {html`<ff-updates-for-you />`}
+</Story>
+
+
+And this is another testing
+
+<Story name="another">
+  {html`<ff-updates-for-you />`}
+</Story>
