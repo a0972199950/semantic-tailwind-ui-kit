@@ -1,6 +1,90 @@
-import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Canvas, Story, Preview, Source, SourceContainer, Description, Title, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html } from 'lit-html'
-// import { FFUpdatesForYou } from './FFUpdatesForYou'
+
+export const Template = ({ benchmarks }) => html`<ff-updates-for-you .benchmarks=${benchmarks} />`
+export const args = {
+  benchmarks: [
+    {
+      key: 'INDUSTRY_BENCHMARK_INDEX',
+      text: 'Industry benchmark index',
+      score: 4
+    },
+    {
+      key: 'FININCIAL_HEALTHINESS',
+      text: 'Financial healthiness',
+      score: 0
+    },
+    {
+      key: 'DATA_QUALITY',
+      text: 'Data Quality',
+      score: 10
+    }
+  ]
+}
+export const code = `
+// React
+import reactifyWc from 'reactify-wc'
+const FFUpdatesForYou = reactifyWc('ff-updates-for-you')
+const FunctionalComponent = () => {
+  const seeDetail = () => alert('Detail button clicked')
+  return (
+    <FFUpdatesForYou
+      benchmarks={[
+        {
+          key: 'INDUSTRY_BENCHMARK_INDEX',
+          text: 'Industry benchmark index',
+          score: 4
+        },
+        {
+          key: 'FININCIAL_HEALTHINESS',
+          text: 'Financial healthiness',
+          score: 0
+        },
+        {
+          key: 'DATA_QUALITY',
+          text: 'Data Quality',
+          score: 10
+        },
+      ]}
+      onDetailBtnClick={() => seeDetail()}
+    />
+  )
+}
+// Vue
+<template>
+  <div>
+    <ff-updates-for-you
+      :benchmarks.prop="[
+        {
+          key: 'INDUSTRY_BENCHMARK_INDEX',
+          text: 'Industry benchmark index',
+          score: 4
+        },
+        {
+          key: 'FININCIAL_HEALTHINESS',
+          text: 'Financial healthiness',
+          score: 0
+        },
+        {
+          key: 'DATA_QUALITY',
+          text: 'Data Quality',
+          score: 10
+        },
+      ]"
+      @detailBtnClick="seeDetail"
+    />
+  </div>
+</template>
+<script>
+export default {
+  methods: {
+    seeDetail () {
+      alert('Click see detail')
+    }
+  }
+}
+</script>
+`
 
 <Meta
   title="fundfluent/ff-updates-for-you"
@@ -13,46 +97,35 @@ import { html } from 'lit-html'
   ]}
 />
 
-
 # Updates For you
 
 This component is used to display news/updates for users
 
-code:
-```jsx
-<FFUpdatesForYou
-  benchmarks={[
-    {
-      key: 'INDUSTRY_BENCHMARK_INDEX',
-      text: 'Industry benchmark index',
-      score: 4
-    },
+<Preview mdxSource={code}>
+  <Story
+    name="default"
+    args={args}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
 
-    {
-      key: 'FININCIAL_HEALTHINESS',
-      text: 'Financial healthiness',
-      score: 0
-    },
+### Properties
 
-    {
-      key: 'DATA_QUALITY',
-      text: 'Data Quality',
-      score: 10
-    },
-  ]}
-  onDetailBtnClick={() => seeDetail()}
-/>
-```
+| Property     | Attribute | Description | Type          | Default | Requirement
+| ------------ | --------- | ----------- | ------------- | ------- |
+| `benchmarks` | --        | A set of data that you want to display in component     | `Benchmark[]` | `[]`    | `false`
 
-<Story
-  name="default"
->
-  {html`<ff-updates-for-you />`}
-</Story>
+- Benchmark
 
+Key | Type | Description
+--|:--|:--
+key | string | The unique key with this data
+Text | string | String that will displayed on the component
+Score | number | 0~10, each range of scores represent different color
 
-And this is another testing
+### Events
 
-<Story name="another">
-  {html`<ff-updates-for-you />`}
-</Story>
+| Event            | Description | When to trigger               |
+| ---------------- | ----------- | ------------------ |
+| `detailBtnClick` |             | When user click the button "See details" |

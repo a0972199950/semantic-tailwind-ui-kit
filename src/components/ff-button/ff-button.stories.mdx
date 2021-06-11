@@ -1,0 +1,291 @@
+import { Meta, Preview, Canvas, Story } from '@storybook/addon-docs/blocks'
+import { html } from 'lit-html'
+
+export const Template = ({ type, size, text }) => html`<ff-button type=${type} size=${size}>${text}</ff-button>`
+
+<Meta
+  title="fundfluent/ff-button"
+  argTypes={{
+    type: {
+      name: 'type',
+      description: 'Button type'
+    },
+    size: {
+      name: 'size',
+      description: 'Button size'
+    }
+  }}
+/>
+
+# Button
+
+The formatted button component
+
+### Types
+<Preview mdxSource={`
+// React
+import reactifyWc from 'reactify-wc'
+const FFButton = reactifyWc('ff-button')
+const FunctionalComponent = () => {
+  return (
+    <>
+      <FFButton type="primary">Text</FFButton>
+      <FFButton type="secondary">Text</FFButton>
+      <FFButton type="red">Text</FFButton>
+      <FFButton type="orange">Text</FFButton>
+      <FFButton type="yellow">Text</FFButton>
+      <FFButton type="green">Text</FFButton>
+      <FFButton type="blue">Text</FFButton>
+      <FFButton type="violet">Text</FFButton>
+      <FFButton type="purple">Text</FFButton>
+      <FFButton type="pink">Text</FFButton>
+      <FFButton type="brown">Text</FFButton>
+    </>
+  )
+}
+// Vue
+<template>
+  <div>
+    <ff-button type="primary">Text</ff-button>
+    <ff-button type="secondary">Text</ff-button>
+    <ff-button type="red">Text</ff-button>
+    <ff-button type="orange">Text</ff-button>
+    <ff-button type="yellow">Text</ff-button>
+    <ff-button type="green">Text</ff-button>
+    <ff-button type="blue">Text</ff-button>
+    <ff-button type="violet">Text</ff-button>
+    <ff-button type="purple">Text</ff-button>
+    <ff-button type="pink">Text</ff-button>
+    <ff-button type="brown">Text</ff-button>
+  </div>
+</template>
+`}>
+  <Story
+    name="Primary"
+    args={{
+      type: 'primary',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary"
+    args={{
+      type: 'secondary',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Red"
+    args={{
+      type: 'red',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Orange"
+    args={{
+      type: 'orange',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Yellow"
+    args={{
+      type: 'yellow',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Green"
+    args={{
+      type: 'green',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Blue"
+    args={{
+      type: 'blue',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Violet"
+    args={{
+      type: 'violet',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Purple"
+    args={{
+      type: 'purple',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Pink"
+    args={{
+      type: 'pink',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Brown"
+    args={{
+      type: 'brown',
+      text: 'Text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+
+### Sizes
+<Preview mdxSource={`
+// React
+import reactifyWc from 'reactify-wc'
+const FFButton = reactifyWc('ff-button')
+const FunctionalComponent = () => {
+  return (
+    <>
+      <FFButton type="primary" size="massive">Text</FFButton>
+      <FFButton type="primary" size="huge">Text</FFButton>
+      <FFButton type="primary" size="big">Text</FFButton>
+      <FFButton type="primary" size="large">Text</FFButton>
+      <FFButton type="primary" size="medium">Text</FFButton>
+      <FFButton type="primary" size="small">Text</FFButton>
+      <FFButton type="primary" size="tiny">Text</FFButton>
+      <FFButton type="primary" size="mini">Text</FFButton>
+    </>
+  )
+}
+// Vue
+<template>
+  <div>
+    <ff-button type="primary" size="massive">Text</ff-button>
+    <ff-button type="primary" size="huge">Text</ff-button>
+    <ff-button type="primary" size="big">Text</ff-button>
+    <ff-button type="primary" size="large">Text</ff-button>
+    <ff-button type="primary" size="medium">Text</ff-button>
+    <ff-button type="primary" size="small">Text</ff-button>
+    <ff-button type="primary" size="tiny">Text</ff-button>
+    <ff-button type="primary" size="mini">Text</ff-button>
+  </div>
+</template>
+`}>
+  <Story
+    name="Massive"
+    args={{
+      type: 'primary',
+      text: 'Text',
+      size: 'massive'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Huge"
+    args={{
+      type: 'primary',
+      text: 'Text',
+      size: 'huge'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Big"
+    args={{
+      type: 'primary',
+      text: 'Text',
+      size: 'big'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Large"
+    args={{
+      type: 'primary',
+      text: 'Text',
+      size: 'large'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Medium"
+    args={{
+      type: 'primary',
+      text: 'Text',
+      size: 'medium'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Small"
+    args={{
+      type: 'primary',
+      text: 'Text',
+      size: 'small'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Tiny"
+    args={{
+      type: 'primary',
+      text: 'Text',
+      size: 'tiny'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Mini"
+    args={{
+      type: 'primary',
+      text: 'Text',
+      size: 'mini'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+### Properties
+
+| Property     | Attribute | Description | Type          | Default | Requirement
+| ------------ | --------- | ----------- | ------------- | ------- |
+| `type` | --        | Button color | `string` | `primary`    | `false`
+| `size` | --        | Button size | `string` | `medium`    | `false`
+
+### Events
+
+| Event            | Description | When to trigger               |
+| ---------------- | ----------- | ------------------ |
+| `click` |             | When user click the button |
