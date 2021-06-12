@@ -12,6 +12,10 @@ function App() {
 
   return (
     <div>
+      <p className="benchmark__key">benchmark__key</p>
+
+      <hr />
+
       <FFButton type="primary">button</FFButton>
 
       <hr />

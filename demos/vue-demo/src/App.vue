@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <p class="benchmark__key">benchmark__key</p>
+
+    <hr />
+  
     <ff-button type="primary">button</ff-button>
 
     <hr>
@@ -43,3 +47,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.benchmark__key {
+  color: red;
+}
+</style>
