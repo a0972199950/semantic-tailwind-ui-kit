@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { applyPolyfills, defineCustomElements } from './loader'
+import { applyPolyfills, defineCustomElements } from 'john-test-design-system/loader'
 
 ReactDOM.render(
   <React.StrictMode>

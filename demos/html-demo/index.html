@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/dist/fundfluent-frontend-design-system/fundfluent-frontend-design-system.esm.js"></script>
+
+    <style>
+      .benchmark__key {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p class="benchmark__key">benchmark__key</p>
+
+    <hr>
+
+    <ff-button type="primary">button</ff-button>
+
+    <hr>
+
+    <div style="width: 300px; border: 1px grey dashed;">
+      <ff-updates-for-you />
+    </div>
+    
+    <script>
+      const ffUpdatesForYou = document.querySelector('ff-updates-for-you')
+      ffUpdatesForYou.benchmarks = [
+        {
+          key: 'INDUSTRY_BENCHMARK_INDEX',
+          text: 'Industry benchmark index',
+          score: 4
+        },
+
+        {
+          key: 'FININCIAL_HEALTHINESS',
+          text: 'Financial healthiness',
+          score: 0
+        },
+
+        {
+          key: 'DATA_QUALITY',
+          text: 'Data Quality',
+          score: 10
+        },
+      ]
+
+      ffUpdatesForYou.addEventListener('detailBtnClick', () => {
+        alert('Click see detail')
+      })
+    </script>
+
+  </body>
+</html>
