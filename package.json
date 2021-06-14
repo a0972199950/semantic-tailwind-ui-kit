@@ -1,7 +1,7 @@
 {
-  "name": "john-test-design-system",
+  "name": "@fundfluent/ui-kit",
   "version": "0.0.1",
-  "description": "",
+  "description": "Fundfluent UI kits built from Web components",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -15,18 +15,22 @@
     "loader/"
   ],
   "scripts": {
-    "build-semantic": "cd src/semantic && gulp build-css build-assets",
-    "watch-semantic": "cd src/semantic && yarn run build-semantic && gulp watch",
-    "build": "stencil build --docs",
-    "dev": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "dev:stencil": "stencil build --dev --watch --serve",
+    "build:stencil": "stencil build --docs",
+    "test:stencil": "stencil test --spec --e2e",
+    "generate:stencil": "stencil generate",
+    "dev:semantic": "cd src/semantic && yarn run build-semantic && gulp watch",
+    "build:semantic": "cd src/semantic && gulp build-css build-assets",
+    "dev:storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook -o ./public/storybook",
+    "dev:tcv": "tailwind-config-viewer serve",
+    "build:tcv": "tailwind-config-viewer export ./public/tailwind",
+    "build": "npm-run-all build:semantic build:stencil build:storybook build:tcv",
+    "start": "node server/index.js"
   },
   "dependencies": {
     "@stencil/core": "^2.6.0",
+    "express": "^4.17.1",
     "fomantic-ui": "^2.8.7",
     "postcss": "^8.1.14",
     "reactify-wc": "^4.0.0",
@@ -48,7 +52,15 @@
     "cssnano": "^5.0.5",
     "less-plugin-autoprefix": "^2.0.0",
     "lit-html": "^1.4.1",
+    "npm-run-all": "^4.1.5",
     "postcss-replace": "^1.1.3",
+    "tailwind-config-viewer": "^1.6.2",
     "tailwindcss": "^2.1.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://John-Hsieh@bitbucket.org/fundfluent/fundfluent-frontend-design-system.git"
+  },
+  "author": "John H",
+  "homepage": "https://bitbucket.org/fundfluent/fundfluent-frontend-design-system#readme"
 }
