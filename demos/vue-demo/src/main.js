@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Vue from 'vue'
 import App from './App.vue'
-import { applyPolyfills, defineCustomElements } from 'john-test-design-system/loader'
+import { applyPolyfills, defineCustomElements } from '@aa-npmjs-admin/ui-kit/loader'
 
 Vue.config.productionTip = false
 
