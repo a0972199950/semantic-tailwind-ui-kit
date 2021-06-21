@@ -1,5 +1,5 @@
 {
-  "name": "@fundfluent/ui-kit",
+  "name": "test-name-ui-kit",
   "version": "0.0.1",
   "description": "Fundfluent UI kits built from Web components",
   "main": "dist/index.cjs.js",
