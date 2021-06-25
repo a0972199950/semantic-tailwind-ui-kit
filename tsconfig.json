@@ -4,6 +4,7 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "lib": [
       "dom",
       "es2017"
@@ -14,7 +15,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "react",
-    "jsxFactory": "h"
+    "jsxFactory": "h",
+    "baseUrl": "./",
+    "paths": {
+      "~src/*": ["src/*"]
+    }
   },
   "include": [
     "src"

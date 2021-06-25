@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 
-@import '../../semantic/dist/components/button.min.css';
-
 :host {
   display: block;
 }

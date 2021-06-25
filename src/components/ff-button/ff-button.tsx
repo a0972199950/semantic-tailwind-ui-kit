@@ -3,7 +3,10 @@ import { Component, Host, h, Prop } from '@stencil/core'
 
 @Component({
   tag: 'ff-button',
-  styleUrl: 'ff-button.scss',
+  styleUrls: [
+    '../../semantic/dist/components/button.min.css',
+    'ff-button.scss'
+  ],
   shadow: true,
 })
 export class FFButton {

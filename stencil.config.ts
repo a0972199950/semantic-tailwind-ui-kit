@@ -10,6 +10,8 @@ import tailwindcss from 'tailwindcss'
 import cssnano from 'cssnano'
 import purgecss from '@fullhuman/postcss-purgecss'
 import replace from 'postcss-replace'
+import tsconfigPathsJest from 'tsconfig-paths-jest'
+import tsconfig from './tsconfig.json'
 
 const purge = purgecss({
   content: ['./src/**/*.tsx', './src/index.html'],
@@ -66,5 +68,9 @@ export const config: Config = {
           : [])
       ]
     })
-  ]
+  ],
+
+  testing: {
+    moduleNameMapper: tsconfigPathsJest(tsconfig),
+  }
 }
