@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story, Preview, Source, SourceContainer, Description, Title, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html } from 'lit-html'
 
-export const Template = ({ benchmarks }) => html`<ff-updates-for-you .benchmarks=${benchmarks} />`
+export const Template = ({ benchmarks, lang }) => html`<ff-updates-for-you .benchmarks=${benchmarks} .lang=${lang} />`
 export const args = {
   benchmarks: [
     {
@@ -19,7 +19,8 @@ export const args = {
       text: 'Data Quality',
       score: 10
     }
-  ]
+  ],
+  lang: 'en'
 }
 export const code = `
 // React

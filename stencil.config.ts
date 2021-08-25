@@ -29,16 +29,25 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        { src: '**/locales/*.json', dest: 'locales' }
+      ]
     },
     {
       type: 'dist-custom-elements-bundle',
+      copy: [
+        { src: '**/locales/*.json', dest: 'locales' }
+      ]
     },
     {
-      type: 'docs-readme',
+      type: 'docs-readme'
     },
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [
+        { src: '**/locales/*.json', dest: 'locales' }
+      ]
     }
   ],
 

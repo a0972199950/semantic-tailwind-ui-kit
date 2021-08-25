@@ -1,0 +1,13 @@
+{
+  "title": "Updates for you",
+  "indexDesc": "Your FundFluent Index helps you find business loans that match your credit profile. Here are the main contributors to your index score.",
+  "updatesDesc": "To receive updates and insights, please provide more information, the better we know you the more updates we have for you.",
+  "seeDetailsBtnText": "See details",
+  "index": {
+    "farBelowStandards": "Far below standards",
+    "belowStandards": "Below standards",
+    "meetsStandards": "Meets standards",
+    "exceedsStandards": "Exceeds standards",
+    "excellent": "Excellent"
+  }
+}

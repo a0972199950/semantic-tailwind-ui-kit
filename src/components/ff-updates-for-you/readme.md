@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property     | Attribute | Description | Type          | Default |
-| ------------ | --------- | ----------- | ------------- | ------- |
-| `benchmarks` | --        |             | `Benchmark[]` | `[]`    |
+| Property     | Attribute | Description | Type          | Default     |
+| ------------ | --------- | ----------- | ------------- | ----------- |
+| `benchmarks` | --        |             | `Benchmark[]` | `[]`        |
+| `lang`       | `lang`    |             | `string`      | `undefined` |
 
 
 ## Events

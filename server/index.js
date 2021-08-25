@@ -9,6 +9,8 @@ app.get('/', (req, res) => {
   res.redirect('/storybook/index.html')
 })
 
+app.use('/locales', express.static(path.join(__dirname, '../www/locales')))
+
 app.listen(8000, () => {
   console.log('Server start at port 8000')
 })

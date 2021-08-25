@@ -1,5 +1,7 @@
-import { Component, h, Prop, Event, EventEmitter } from '@stencil/core'
+import { Component, h, Prop, Event, EventEmitter, Element, Watch } from '@stencil/core'
+import get from 'lodash/get'
 import { Benchmark } from '../../types'
+import getLocaleComponentStrings from '../../utils/locale'
 
 @Component({
   tag: 'ff-updates-for-you',
@@ -8,6 +10,19 @@ import { Benchmark } from '../../types'
 })
 export class FFUpdatesForYou {
   @Prop() benchmarks: Benchmark[] = []
+  @Prop() lang: string
+
+  @Element() element: HTMLElement
+
+  @Event({ eventName: 'detailBtnClick' }) detailBtnClick: EventEmitter
+
+  @Watch('lang')
+  handleLangChange(newLang: string) {
+    console.log('handleLangChange', newLang)
+    this.initLocaleStrings(newLang)
+  }
+
+  private strings: any
 
   private getBenchMarkMetadata (score: number) {
     switch (true) {
@@ -16,23 +31,23 @@ export class FFUpdatesForYou {
       }
   
       case score > 0 && score <= 2: {
-        return { color: 'red', statusText: 'Far below standards' }
+        return { color: 'red', statusText: this.t('index.farBelowStandards') }
       }
   
       case score > 2 && score <= 4: {
-        return { color: 'orange', statusText: 'Below standards' }
+        return { color: 'orange', statusText: this.t('index.belowStandards') }
       }
   
       case score > 4 && score <= 6: {
-        return { color: 'yellow', statusText: 'Meets standards' }
+        return { color: 'yellow', statusText: this.t('index.meetsStandards') }
       }
   
       case score > 6 && score <= 8: {
-        return { color: 'blue', statusText: 'Exceeds standards' }
+        return { color: 'blue', statusText: this.t('index.exceedsStandards') }
       }
   
       case score > 8: {
-        return { color: 'green', statusText: 'Excellent' }
+        return { color: 'green', statusText: this.t('index.excellent') }
       }
   
       default: {
@@ -41,15 +56,34 @@ export class FFUpdatesForYou {
     }
   }
 
-  @Event({ eventName: 'detailBtnClick' }) detailBtnClick: EventEmitter
+  async componentWillLoad () {
+    this.detectLang()
+    this.initLocaleStrings()
+  }
+
+  detectLang () {
+    console.log('detectLang')
+    const closestElement = this.element.closest('[lang]') as HTMLElement
+    console.log('lang: ', this.lang || closestElement?.lang || 'en')
+    this.lang = this.lang || closestElement?.lang || 'en'
+  }
+
+  async initLocaleStrings (lang?: string) {
+    console.log('initLocaleStrings')
+    this.strings = await getLocaleComponentStrings(this.element, lang || this.lang)
+  }
+
+  t (key: string) {
+    return get(this.strings, key)
+  }
 
   render () {
     return (
       <div class="container">
-        <h1 class="title">Updates for you</h1>
+        <h1 class="title">{this.t('title')}</h1>
 
         <p class="pharagraph">
-          Your FundFluent Index helps you find business loans that match your credit profile. Here are the main contributors to your index score.
+          {this.t('indexDesc')}
         </p>
 
         {
@@ -67,7 +101,7 @@ export class FFUpdatesForYou {
         }
 
         <p class="pharagraph">
-          To receive updates and insights, please provide more information, the better we know you the more updates we have for you.
+          {this.t('updatesDesc')}
         </p>
 
         <div class="text-right mt-2">
@@ -76,7 +110,7 @@ export class FFUpdatesForYou {
             size="mini"
             onClick={() => this.detailBtnClick.emit()}
           >
-            See details
+            {this.t('seeDetailsBtnText')}
           </ff-button>
         </div>
       </div>
