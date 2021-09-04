@@ -1,4 +1,4 @@
-import { Component, h, Prop, Event, EventEmitter, Element, Watch } from '@stencil/core'
+import { Component, h, Prop, State, Event, EventEmitter, Element, Watch } from '@stencil/core'
 import get from 'lodash/get'
 import { Benchmark } from '../../types'
 import getLocaleComponentStrings from '../../utils/locale'
@@ -10,19 +10,47 @@ import getLocaleComponentStrings from '../../utils/locale'
 })
 export class FFUpdatesForYou {
   @Prop() benchmarks: Benchmark[] = []
-  @Prop() lang: string
+  @Prop() locale: string
 
-  @Element() element: HTMLElement
+  @State() key: string = new Date().valueOf().toString()
+
+  private strings: any
+  private ready: boolean = false
+
+  @Element() element: any
 
   @Event({ eventName: 'detailBtnClick' }) detailBtnClick: EventEmitter
 
-  @Watch('lang')
-  handleLangChange(newLang: string) {
-    console.log('handleLangChange', newLang)
-    this.initLocaleStrings(newLang)
+  @Watch('locale')
+  async handleLocaleChange(newLocale: string) {
+    if (!this.ready) { return }
+    await this.initLocaleStrings(newLocale)
+    this.updateKey()
   }
 
-  private strings: any
+  async componentWillLoad () {
+    this.detectLang()
+    await this.initLocaleStrings()
+    this.ready = true
+  }
+
+  detectLang () {
+    const closestElement = this.element.closest('[lang]') as HTMLElement
+    this.locale = this.locale || closestElement?.lang || 'en'
+  }
+
+  async initLocaleStrings (lang?: string) {
+    const locale = lang || this.locale
+    this.strings = await getLocaleComponentStrings(this.element, locale)
+  }
+
+  t (key: string) {
+    return get(this.strings, key)
+  }
+
+  updateKey () {
+    this.key = new Date().valueOf().toString()
+  }
 
   private getBenchMarkMetadata (score: number) {
     switch (true) {
@@ -56,30 +84,9 @@ export class FFUpdatesForYou {
     }
   }
 
-  async componentWillLoad () {
-    this.detectLang()
-    this.initLocaleStrings()
-  }
-
-  detectLang () {
-    console.log('detectLang')
-    const closestElement = this.element.closest('[lang]') as HTMLElement
-    console.log('lang: ', this.lang || closestElement?.lang || 'en')
-    this.lang = this.lang || closestElement?.lang || 'en'
-  }
-
-  async initLocaleStrings (lang?: string) {
-    console.log('initLocaleStrings')
-    this.strings = await getLocaleComponentStrings(this.element, lang || this.lang)
-  }
-
-  t (key: string) {
-    return get(this.strings, key)
-  }
-
   render () {
     return (
-      <div class="container">
+      <div class="container" key={this.key}>
         <h1 class="title">{this.t('title')}</h1>
 
         <p class="pharagraph">

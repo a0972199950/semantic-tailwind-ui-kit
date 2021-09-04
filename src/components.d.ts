@@ -13,7 +13,7 @@ export namespace Components {
     }
     interface FfUpdatesForYou {
         "benchmarks": Benchmark[];
-        "lang": string;
+        "locale": string;
     }
     interface MyComponent {
         /**
@@ -62,7 +62,7 @@ declare namespace LocalJSX {
     }
     interface FfUpdatesForYou {
         "benchmarks"?: Benchmark[];
-        "lang"?: string;
+        "locale"?: string;
         "onDetailBtnClick"?: (event: CustomEvent<any>) => void;
     }
     interface MyComponent {

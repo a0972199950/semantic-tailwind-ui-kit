@@ -17,6 +17,9 @@
     <div style="width: 300px; border: 1px grey dashed;">
       <ff-updates-for-you />
     </div>
+
+    <button onclick="changeLocale('en')">Change locale to en</button>
+    <button onclick="changeLocale('zh-TW')">Change locale to zh-TW</button>
     
     <script>
       const ffUpdatesForYou = document.querySelector('ff-updates-for-you')
@@ -43,6 +46,10 @@
       ffUpdatesForYou.addEventListener('detailBtnClick', () => {
         alert('Click see detail')
       })
+
+      const changeLocale = (locale) => {
+        ffUpdatesForYou.locale = locale
+      }
     </script>
 
   </body>
