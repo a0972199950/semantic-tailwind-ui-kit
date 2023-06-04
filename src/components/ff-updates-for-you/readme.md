@@ -10,7 +10,7 @@
 | Property     | Attribute | Description | Type          | Default     |
 | ------------ | --------- | ----------- | ------------- | ----------- |
 | `benchmarks` | --        |             | `Benchmark[]` | `[]`        |
-| `lang`       | `lang`    |             | `string`      | `undefined` |
+| `locale`     | `locale`  |             | `string`      | `undefined` |
 
 
 ## Events
