@@ -1,7 +1,7 @@
-const getComponentClosestLanguage = (el: HTMLElement) => {
-  let closestElement = el.closest('[lang]') as HTMLElement
-  return closestElement?.lang || 'en'
-}
+// const getComponentClosestLanguage = (el: HTMLElement) => {
+//   let closestElement = el.closest('[lang]') as HTMLElement
+//   return closestElement?.lang || 'en'
+// }
 
 const fetchLocaleStringsForComponent = async (componentName: string, locale: string) => {
   const res = await fetch(`/locales/${componentName}.${locale}.json`)
