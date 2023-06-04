@@ -1,7 +1,7 @@
 {
-  "name": "@aa-npmjs-admin/ui-kit",
+  "name": "@jh-pkg/ui-kit",
   "version": "0.0.1",
-  "description": "Fundfluent UI kits built from Web components",
+  "description": "An UI kits built from Web components",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -9,7 +9,7 @@
   "types": "dist/custom-elements/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/fundfluent-frontend-design-system/fundfluent-frontend-design-system.esm.js",
+  "unpkg": "dist/jh-frontend-design-system/jh-frontend-design-system.esm.js",
   "files": [
     "dist/",
     "loader/"
@@ -62,8 +62,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://John-Hsieh@bitbucket.org/fundfluent/fundfluent-frontend-design-system.git"
+    "url": "git+https://github.com/a0972199950/semantic-tailwind-ui-kit.git"
   },
   "author": "John H",
-  "homepage": "https://bitbucket.org/fundfluent/fundfluent-frontend-design-system#readme"
+  "homepage": "https://github.com/a0972199950/semantic-tailwind-ui-kit#readme"
 }

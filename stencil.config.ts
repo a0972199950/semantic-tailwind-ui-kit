@@ -19,7 +19,7 @@ const purge = purgecss({
 })
 
 export const config: Config = {
-  namespace: 'fundfluent-frontend-design-system',
+  namespace: 'jh-frontend-design-system',
 
   devServer: {
     openBrowser: false
