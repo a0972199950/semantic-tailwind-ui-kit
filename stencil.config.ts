@@ -21,6 +21,8 @@ const purge = purgecss({
 export const config: Config = {
   namespace: 'jh-frontend-design-system',
 
+  globalStyle: 'src/global/global.scss',
+
   devServer: {
     openBrowser: false
   },
@@ -53,11 +55,7 @@ export const config: Config = {
 
   plugins: [
     // sass, scss 支援
-    sass({
-      injectGlobalPaths: [
-        'src/styles/index.scss'
-      ]
-    }),
+    sass(),
 
     // postcss 支援
     postcss({

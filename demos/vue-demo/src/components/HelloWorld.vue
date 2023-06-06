@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <ff-header :data-navs="['a', 'b']">
+    <jh-header :data-navs="['a', 'b']">
       <p>vue</p>
-    </ff-header>
+    </jh-header>
 
     <h1>{{ msg }}</h1>
     <p>

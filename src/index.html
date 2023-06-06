@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
 
+    <link rel="stylesheet" href="/build/jh-frontend-design-system.css" />
+
     <script type="module" src="/build/jh-frontend-design-system.esm.js"></script>
     <script nomodule src="/build/jh-frontend-design-system.js"></script>
   </head>
   <body>
 
-    <ff-button type="primary">button</ff-button>
+    <jh-button type="primary">button</jh-button>
 
     <hr>
 
     <div style="width: 300px; border: 1px grey dashed;">
-      <ff-updates-for-you />
+      <jh-updates-for-you />
     </div>
 
     <button onclick="changeLocale('en')">Change locale to en</button>
     <button onclick="changeLocale('zh-TW')">Change locale to zh-TW</button>
     
     <script>
-      const ffUpdatesForYou = document.querySelector('ff-updates-for-you')
-      ffUpdatesForYou.benchmarks = [
+      const jhUpdatesForYou = document.querySelector('jh-updates-for-you')
+      jhUpdatesForYou.benchmarks = [
         {
           key: 'INDUSTRY_BENCHMARK_INDEX',
           text: 'Industry benchmark index',
@@ -43,12 +45,12 @@
         },
       ]
 
-      ffUpdatesForYou.addEventListener('detailBtnClick', () => {
+      jhUpdatesForYou.addEventListener('detailBtnClick', () => {
         alert('Click see detail')
       })
 
       const changeLocale = (locale) => {
-        ffUpdatesForYou.locale = locale
+        jhUpdatesForYou.locale = locale
       }
     </script>
 

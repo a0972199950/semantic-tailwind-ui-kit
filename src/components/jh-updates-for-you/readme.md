@@ -1,4 +1,4 @@
-# ff-updates-for-you
+# jh-updates-for-you
 
 
 
@@ -24,13 +24,13 @@
 
 ### Depends on
 
-- [ff-button](../ff-button)
+- [jh-button](../jh-button)
 
 ### Graph
 ```mermaid
 graph TD;
-  ff-updates-for-you --> ff-button
-  style ff-updates-for-you fill:#f9f,stroke:#333,stroke-width:4px
+  jh-updates-for-you --> jh-button
+  style jh-updates-for-you fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

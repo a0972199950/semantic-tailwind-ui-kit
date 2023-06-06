@@ -2,14 +2,14 @@ import { Component, Host, h, Prop } from '@stencil/core'
 // import { SemanticCOLORS, SemanticSIZES } from 'semantic-ui-react'
 
 @Component({
-  tag: 'ff-button',
+  tag: 'jh-button',
   styleUrls: [
     '../../semantic/dist/components/button.min.css',
-    'ff-button.scss'
+    'jh-button.scss'
   ],
   shadow: true,
 })
-export class FFButton {
+export class JHButton {
   @Prop () type?: any | 'primary' | 'secondary' = 'primary'
   @Prop () size?: any = 'medium'
 

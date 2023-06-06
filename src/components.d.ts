@@ -7,91 +7,54 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Benchmark } from "./types";
 export namespace Components {
-    interface FfButton {
+    interface JhButton {
         "size"?: any;
         "type"?: any | 'primary' | 'secondary';
     }
-    interface FfUpdatesForYou {
+    interface JhUpdatesForYou {
         "benchmarks": Benchmark[];
         "locale": string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
 }
 declare global {
-    interface HTMLFfButtonElement extends Components.FfButton, HTMLStencilElement {
+    interface HTMLJhButtonElement extends Components.JhButton, HTMLStencilElement {
     }
-    var HTMLFfButtonElement: {
-        prototype: HTMLFfButtonElement;
-        new (): HTMLFfButtonElement;
+    var HTMLJhButtonElement: {
+        prototype: HTMLJhButtonElement;
+        new (): HTMLJhButtonElement;
     };
-    interface HTMLFfUpdatesForYouElement extends Components.FfUpdatesForYou, HTMLStencilElement {
+    interface HTMLJhUpdatesForYouElement extends Components.JhUpdatesForYou, HTMLStencilElement {
     }
-    var HTMLFfUpdatesForYouElement: {
-        prototype: HTMLFfUpdatesForYouElement;
-        new (): HTMLFfUpdatesForYouElement;
-    };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLJhUpdatesForYouElement: {
+        prototype: HTMLJhUpdatesForYouElement;
+        new (): HTMLJhUpdatesForYouElement;
     };
     interface HTMLElementTagNameMap {
-        "ff-button": HTMLFfButtonElement;
-        "ff-updates-for-you": HTMLFfUpdatesForYouElement;
-        "my-component": HTMLMyComponentElement;
+        "jh-button": HTMLJhButtonElement;
+        "jh-updates-for-you": HTMLJhUpdatesForYouElement;
     }
 }
 declare namespace LocalJSX {
-    interface FfButton {
+    interface JhButton {
         "size"?: any;
         "type"?: any | 'primary' | 'secondary';
     }
-    interface FfUpdatesForYou {
+    interface JhUpdatesForYou {
         "benchmarks"?: Benchmark[];
         "locale"?: string;
         "onDetailBtnClick"?: (event: CustomEvent<any>) => void;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
-        "ff-button": FfButton;
-        "ff-updates-for-you": FfUpdatesForYou;
-        "my-component": MyComponent;
+        "jh-button": JhButton;
+        "jh-updates-for-you": JhUpdatesForYou;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ff-button": LocalJSX.FfButton & JSXBase.HTMLAttributes<HTMLFfButtonElement>;
-            "ff-updates-for-you": LocalJSX.FfUpdatesForYou & JSXBase.HTMLAttributes<HTMLFfUpdatesForYouElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "jh-button": LocalJSX.JhButton & JSXBase.HTMLAttributes<HTMLJhButtonElement>;
+            "jh-updates-for-you": LocalJSX.JhUpdatesForYou & JSXBase.HTMLAttributes<HTMLJhUpdatesForYouElement>;
         }
     }
 }

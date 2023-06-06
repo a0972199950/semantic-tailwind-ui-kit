@@ -4,11 +4,11 @@ import { Benchmark } from '../../types'
 import getLocaleComponentStrings from '../../utils/locale'
 
 @Component({
-  tag: 'ff-updates-for-you',
-  styleUrl: 'ff-updates-for-you.scss',
+  tag: 'jh-updates-for-you',
+  styleUrl: 'jh-updates-for-you.scss',
   shadow: true
 })
-export class FFUpdatesForYou {
+export class JHUpdatesForYou {
   @Prop() benchmarks: Benchmark[] = []
   @Prop() locale: string
 
@@ -112,13 +112,13 @@ export class FFUpdatesForYou {
         </p>
 
         <div class="text-right mt-2">
-          <ff-button
+          <jh-button
             type="primary"
             size="mini"
             onClick={() => this.detailBtnClick.emit()}
           >
             {this.t('seeDetailsBtnText')}
-          </ff-button>
+          </jh-button>
         </div>
       </div>
     )

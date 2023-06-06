@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story, Preview, Source, SourceContainer, Description, Title, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html } from 'lit-html'
 
-export const Template = ({ benchmarks, lang }) => html`<ff-updates-for-you .benchmarks=${benchmarks} .lang=${lang} />`
+export const Template = ({ benchmarks, lang }) => html`<jh-updates-for-you .benchmarks=${benchmarks} .lang=${lang} />`
 export const args = {
   benchmarks: [
     {
@@ -25,11 +25,11 @@ export const args = {
 export const code = `
 // React
 import reactifyWc from 'reactify-wc'
-const FFUpdatesForYou = reactifyWc('ff-updates-for-you')
+const JHUpdatesForYou = reactifyWc('jh-updates-for-you')
 const FunctionalComponent = () => {
   const seeDetail = () => alert('Detail button clicked')
   return (
-    <FFUpdatesForYou
+    <JHUpdatesForYou
       benchmarks={[
         {
           key: 'INDUSTRY_BENCHMARK_INDEX',
@@ -54,7 +54,7 @@ const FunctionalComponent = () => {
 // Vue
 <template>
   <div>
-    <ff-updates-for-you
+    <jh-updates-for-you
       :benchmarks.prop="[
         {
           key: 'INDUSTRY_BENCHMARK_INDEX',
@@ -88,7 +88,7 @@ export default {
 `
 
 <Meta
-  title="jh/ff-updates-for-you"
+  title="jh/jh-updates-for-you"
   decorators={[
     story => html`
       <div style="width: 300px; border: 1px grey dashed;">

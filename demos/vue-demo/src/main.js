@@ -1,11 +1,11 @@
 /* eslint-disable */
 import Vue from 'vue'
 import App from './App.vue'
-import { applyPolyfills, defineCustomElements } from '@jh-pkg/ui-kit/loader'
+import { applyPolyfills, defineCustomElements } from '@aa-npmjs-admin/ui-kit/loader'
 
 Vue.config.productionTip = false
 
-Vue.config.ignoredElements = [/ff-\w*/]
+Vue.config.ignoredElements = [/jh-\w*/]
 
 applyPolyfills().then(() => {
   defineCustomElements()

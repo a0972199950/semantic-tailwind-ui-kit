@@ -1,10 +1,10 @@
 import { Meta, Preview, Canvas, Story } from '@storybook/addon-docs/blocks'
 import { html } from 'lit-html'
 
-export const Template = ({ type, size, text }) => html`<ff-button type=${type} size=${size}>${text}</ff-button>`
+export const Template = ({ type, size, text }) => html`<jh-button type=${type} size=${size}>${text}</jh-button>`
 
 <Meta
-  title="jh/ff-button"
+  title="jh/jh-button"
   argTypes={{
     type: {
       name: 'type',
@@ -25,38 +25,38 @@ The formatted button component
 <Preview mdxSource={`
 // React
 import reactifyWc from 'reactify-wc'
-const FFButton = reactifyWc('ff-button')
+const JHButton = reactifyWc('jh-button')
 const FunctionalComponent = () => {
   return (
     <>
-      <FFButton type="primary">Text</FFButton>
-      <FFButton type="secondary">Text</FFButton>
-      <FFButton type="red">Text</FFButton>
-      <FFButton type="orange">Text</FFButton>
-      <FFButton type="yellow">Text</FFButton>
-      <FFButton type="green">Text</FFButton>
-      <FFButton type="blue">Text</FFButton>
-      <FFButton type="violet">Text</FFButton>
-      <FFButton type="purple">Text</FFButton>
-      <FFButton type="pink">Text</FFButton>
-      <FFButton type="brown">Text</FFButton>
+      <JHButton type="primary">Text</JHButton>
+      <JHButton type="secondary">Text</JHButton>
+      <JHButton type="red">Text</JHButton>
+      <JHButton type="orange">Text</JHButton>
+      <JHButton type="yellow">Text</JHButton>
+      <JHButton type="green">Text</JHButton>
+      <JHButton type="blue">Text</JHButton>
+      <JHButton type="violet">Text</JHButton>
+      <JHButton type="purple">Text</JHButton>
+      <JHButton type="pink">Text</JHButton>
+      <JHButton type="brown">Text</JHButton>
     </>
   )
 }
 // Vue
 <template>
   <div>
-    <ff-button type="primary">Text</ff-button>
-    <ff-button type="secondary">Text</ff-button>
-    <ff-button type="red">Text</ff-button>
-    <ff-button type="orange">Text</ff-button>
-    <ff-button type="yellow">Text</ff-button>
-    <ff-button type="green">Text</ff-button>
-    <ff-button type="blue">Text</ff-button>
-    <ff-button type="violet">Text</ff-button>
-    <ff-button type="purple">Text</ff-button>
-    <ff-button type="pink">Text</ff-button>
-    <ff-button type="brown">Text</ff-button>
+    <jh-button type="primary">Text</jh-button>
+    <jh-button type="secondary">Text</jh-button>
+    <jh-button type="red">Text</jh-button>
+    <jh-button type="orange">Text</jh-button>
+    <jh-button type="yellow">Text</jh-button>
+    <jh-button type="green">Text</jh-button>
+    <jh-button type="blue">Text</jh-button>
+    <jh-button type="violet">Text</jh-button>
+    <jh-button type="purple">Text</jh-button>
+    <jh-button type="pink">Text</jh-button>
+    <jh-button type="brown">Text</jh-button>
   </div>
 </template>
 `}>
@@ -166,32 +166,32 @@ const FunctionalComponent = () => {
 <Preview mdxSource={`
 // React
 import reactifyWc from 'reactify-wc'
-const FFButton = reactifyWc('ff-button')
+const JHButton = reactifyWc('jh-button')
 const FunctionalComponent = () => {
   return (
     <>
-      <FFButton type="primary" size="massive">Text</FFButton>
-      <FFButton type="primary" size="huge">Text</FFButton>
-      <FFButton type="primary" size="big">Text</FFButton>
-      <FFButton type="primary" size="large">Text</FFButton>
-      <FFButton type="primary" size="medium">Text</FFButton>
-      <FFButton type="primary" size="small">Text</FFButton>
-      <FFButton type="primary" size="tiny">Text</FFButton>
-      <FFButton type="primary" size="mini">Text</FFButton>
+      <JHButton type="primary" size="massive">Text</JHButton>
+      <JHButton type="primary" size="huge">Text</JHButton>
+      <JHButton type="primary" size="big">Text</JHButton>
+      <JHButton type="primary" size="large">Text</JHButton>
+      <JHButton type="primary" size="medium">Text</JHButton>
+      <JHButton type="primary" size="small">Text</JHButton>
+      <JHButton type="primary" size="tiny">Text</JHButton>
+      <JHButton type="primary" size="mini">Text</JHButton>
     </>
   )
 }
 // Vue
 <template>
   <div>
-    <ff-button type="primary" size="massive">Text</ff-button>
-    <ff-button type="primary" size="huge">Text</ff-button>
-    <ff-button type="primary" size="big">Text</ff-button>
-    <ff-button type="primary" size="large">Text</ff-button>
-    <ff-button type="primary" size="medium">Text</ff-button>
-    <ff-button type="primary" size="small">Text</ff-button>
-    <ff-button type="primary" size="tiny">Text</ff-button>
-    <ff-button type="primary" size="mini">Text</ff-button>
+    <jh-button type="primary" size="massive">Text</jh-button>
+    <jh-button type="primary" size="huge">Text</jh-button>
+    <jh-button type="primary" size="big">Text</jh-button>
+    <jh-button type="primary" size="large">Text</jh-button>
+    <jh-button type="primary" size="medium">Text</jh-button>
+    <jh-button type="primary" size="small">Text</jh-button>
+    <jh-button type="primary" size="tiny">Text</jh-button>
+    <jh-button type="primary" size="mini">Text</jh-button>
   </div>
 </template>
 `}>

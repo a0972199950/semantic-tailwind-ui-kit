@@ -35,9 +35,9 @@ yarn add -D gulp
 ```javascript
 import reactifyWc from 'reactify-wc'
 
-const FFUpdatesForYou = reactifyWc('ff-updates-for-you')
+const JHUpdatesForYou = reactifyWc('jh-updates-for-you')
 
-<FFUpdatesForYou
+<JHUpdatesForYou
   benchmarks={[
     {
       key: 'INDUSTRY_BENCHMARK_INDEX',
@@ -66,7 +66,7 @@ https://www.npmjs.com/package/reactify-wc
 (其餘的資料需要透過element.setAttribute('person', { name: 'john' }) 傳入，或是使用 JSON.stringify({ person: { name: 'john' } }))
 因此在 vue 上，要使用 :xxx.prop 裝飾器來協助傳遞 prop
 ```HTML
-<ff-updates-for-you
+<jh-updates-for-you
   :benchmarks.prop="[
     {
       key: 'INDUSTRY_BENCHMARK_INDEX',

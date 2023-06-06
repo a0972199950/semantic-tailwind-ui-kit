@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import reactifyWc from 'reactify-wc'
 
-const FFButton = reactifyWc('ff-button')
-const FFUpdatesForYou = reactifyWc('ff-updates-for-you')
+const JHButton = reactifyWc('jh-button')
+const JHUpdatesForYou = reactifyWc('jh-updates-for-you')
 
 function App() {
   const seeDetail = () => {
@@ -16,12 +15,12 @@ function App() {
 
       <hr />
 
-      <FFButton type="primary">button</FFButton>
+      <JHButton type="primary">button</JHButton>
 
       <hr />
 
       <div style={{ width: '300px', border: '1px grey dashed' }}>
-        <FFUpdatesForYou
+        <JHUpdatesForYou
           benchmarks={[
             {
               key: 'INDUSTRY_BENCHMARK_INDEX',

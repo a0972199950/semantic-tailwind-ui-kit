@@ -4,12 +4,12 @@
 
     <hr />
   
-    <ff-button type="primary">button</ff-button>
+    <jh-button type="primary">button</jh-button>
 
     <hr>
     
     <div style="width: 300px; border: 1px grey dashed;">
-      <ff-updates-for-you
+      <jh-updates-for-you
         :benchmarks.prop="[
           {
             key: 'INDUSTRY_BENCHMARK_INDEX',
