@@ -1,6 +1,6 @@
 {
   "name": "johnh-ui-kit",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "An UI kits built from Web components",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -28,9 +28,9 @@
     "test:stencil": "stencil test --spec --e2e",
     "generate:stencil": "stencil generate",
     "start": "node server/index.js",
-    "release:major": "npm version $(semver $npm_package_version -i major) && npm publish --tag latest",
-    "release:minor": "npm version $(semver $npm_package_version -i minor) && npm publish --tag latest",
-    "release:patch": "yarn publish --patch"
+    "release:major": "yarn build && yarn publish --major",
+    "release:minor": "yarn publish --minor",
+    "release:patch": "yarn build && yarn publish --patch"
   },
   "dependencies": {
     "@stencil/core": "^2.6.0",
