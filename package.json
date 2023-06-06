@@ -1,6 +1,6 @@
 {
-  "name": "@jh-pkg/ui-kit",
-  "version": "0.0.1",
+  "name": "johnh-ui-kit",
+  "version": "0.0.2",
   "description": "An UI kits built from Web components",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -16,18 +16,21 @@
   ],
   "scripts": {
     "dev:semantic": "cd src/semantic && yarn run build-semantic && gulp watch",
-    "build:semantic": "cd src/semantic && gulp build-css build-assets",
     "dev:stencil": "stencil build --dev --watch --serve",
+    "dev:storybook": "start-storybook -p 6006",
+    "dev:tcv": "tailwind-config-viewer serve",
+    "dev": "npm-run-all dev:stencil",
+    "build:semantic": "cd src/semantic && gulp build-css build-assets",
     "build:stencil": "stencil build --docs",
+    "build:storybook": "build-storybook -o ./public/storybook",
+    "build:tcv": "tailwind-config-viewer export ./public/tailwind",
+    "build": "npm-run-all build:semantic build:stencil build:storybook build:tcv",
     "test:stencil": "stencil test --spec --e2e",
     "generate:stencil": "stencil generate",
-    "dev:storybook": "start-storybook -p 6006",
-    "build:storybook": "build-storybook -o ./public/storybook",
-    "dev:tcv": "tailwind-config-viewer serve",
-    "build:tcv": "tailwind-config-viewer export ./public/tailwind",
-    "dev": "npm-run-all dev:stencil",
-    "build": "npm-run-all build:semantic build:stencil build:storybook build:tcv",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "release:major": "npm version $(semver $npm_package_version -i major) && npm publish --tag latest",
+    "release:minor": "npm version $(semver $npm_package_version -i minor) && npm publish --tag latest",
+    "release:patch": "npm version patch --force && npm publish"
   },
   "dependencies": {
     "@stencil/core": "^2.6.0",
