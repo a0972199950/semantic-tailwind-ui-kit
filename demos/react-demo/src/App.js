@@ -1,26 +1,26 @@
 import './App.css';
 import reactifyWc from 'reactify-wc'
+import { useState } from 'react'
 
 const JHButton = reactifyWc('jh-button')
 const JHUpdatesForYou = reactifyWc('jh-updates-for-you')
 
 function App() {
+  const [locale, setLocale] = useState('en')
+
   const seeDetail = () => {
     alert('Click see detail')
   }
 
   return (
     <div>
-      <p className="benchmark__key">benchmark__key</p>
-
-      <hr />
-
       <JHButton type="primary">button</JHButton>
 
       <hr />
 
       <div style={{ width: '300px', border: '1px grey dashed' }}>
         <JHUpdatesForYou
+          locale={locale}
           benchmarks={[
             {
               key: 'INDUSTRY_BENCHMARK_INDEX',
@@ -43,6 +43,9 @@ function App() {
           onDetailBtnClick={() => seeDetail()}
         />
       </div>
+
+      <button onClick={() => setLocale('en')}>Change locale to en</button>
+      <button onClick={() => setLocale('zh-TW')}>Change locale to zh-TW</button>
     </div>
   );
 }

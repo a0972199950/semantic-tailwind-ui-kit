@@ -1,15 +1,12 @@
 <template>
-  <div id="app">
-    <p class="benchmark__key">benchmark__key</p>
-
-    <hr />
-  
+  <div id="app">  
     <jh-button type="primary">button</jh-button>
 
     <hr>
     
     <div style="width: 300px; border: 1px grey dashed;">
       <jh-updates-for-you
+        :locale="locale"
         :benchmarks.prop="[
           {
             key: 'INDUSTRY_BENCHMARK_INDEX',
@@ -32,6 +29,9 @@
         @detailBtnClick="seeDetail"
       />
     </div>
+
+    <button @click="changeLocale('en')">Change locale to en</button>
+    <button @click="changeLocale('zh-TW')">Change locale to zh-TW</button>
   </div>
 </template>
 
@@ -40,16 +40,24 @@
 export default {
   name: 'App',
 
+  data () {
+    return {
+      locale: 'en'
+    }
+  },
+
   methods: {
     seeDetail () {
       alert('Click see detail')
+    },
+
+    changeLocale (val) {
+      this.locale = val
     }
   }
 }
 </script>
 
 <style>
-.benchmark__key {
-  color: red;
-}
+
 </style>
